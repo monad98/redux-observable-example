@@ -1,15 +1,20 @@
-import React from "react";
-import { Route, IndexRoute, Router, browserHistory } from "react-router";
+import React from 'react'
+import { Provider } from 'react-redux'
+import configureStore, {history} from './store';
+import { Route } from 'react-router'
+import { ConnectedRouter } from 'react-router-redux'
+const store = configureStore();
+import Main from '../components/Main'
 
-import Main from "../components/Main";
 
-// Using just one route for now
-// NOTE: browserHistory only works when run with a server
-// build the webpack project, start the server, and navigate to localhost:3000
 const routes = (
-  <Router history={browserHistory}>
-    <Route path="/" component={Main} />
-  </Router>
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <div>
+        <Route path="/" component={Main} />
+      </div>
+    </ConnectedRouter>
+  </Provider>
 );
 
 export default routes;
