@@ -3,12 +3,9 @@ React + [redux-observable](https://redux-observable.js.org/) example app.
 
  [Live app](https://react-quotes-app.herokuapp.com)
 
-Routes
+
 
 <img alt="react-quotes-1" src="/public/image/react-quotes-1.png" title="react-quotes-1"/>
-
-Store
-
 <img alt="react-quotes-2" src="/public/image/react-quotes-2.png" title="react-quotes-2"/>
 
 ## Quick Start
