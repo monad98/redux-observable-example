@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const Navbar = ({count}) => (
 <nav className="navbar navbar-default navbar-fixed-top">
@@ -10,7 +11,7 @@ const Navbar = ({count}) => (
     </div>
     <div id="navbar" className="collapse navbar-collapse">
       <ul className="nav navbar-nav">
-        <li><NavLink to="/Submit" activeClassName='active'>Submit</NavLink></li>
+        <li><NavLink to="/submit" activeClassName='active'>Submit</NavLink></li>
         <li><NavLink to="/quotes" activeClassName='active'>Quotes <span className="label label-primary">{count}</span></NavLink></li>
       </ul>
     </div>
@@ -18,9 +19,9 @@ const Navbar = ({count}) => (
 </nav>
 );
 
-// QuoteListComponent.propTypes = {
-//
-// };
+Navbar.propTypes = {
+  count: PropTypes.number.isRequired
+};
 
 //
 export default connect(

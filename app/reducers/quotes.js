@@ -12,7 +12,7 @@ const initialState = {
 /**
  * Reduces
  */
-export default function quotes(state = initialState, action) {
+export function reducer(state = initialState, action) {
   switch (action.type) {
     case fromQuotes.LOAD_QUOTES: {
       const quotes = action.payload;
@@ -44,8 +44,4 @@ export default function quotes(state = initialState, action) {
  */
 const getIds = state => state.ids;
 const getEntities = state => state.entities;
-export const getQuotesArray = createSelector([getIds, getEntities], (ids, entities) => {
-  console.log(ids)
-  console.log(entities)
-  return ids.map(id => entities[id])
-});
+export const getQuotesArray = createSelector([getIds, getEntities], (ids, entities) => ids.map(id => entities[id]));

@@ -1,9 +1,7 @@
 import React from 'react';
-import {saveQuote, fetchQuotes} from '../actions/quotes';
-import { connect } from 'react-redux';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
-class QuoteList extends React.Component {
+export default class SubmitQuote extends React.Component {
   constructor(props) {
     super(props);
     this.state = {text: ''};
@@ -44,11 +42,6 @@ class QuoteList extends React.Component {
   }
 }
 
-// QuoteListComponent.propTypes = {
-//
-// };
-
-export default connect(
-  null,
-  { saveQuote }
-)(QuoteList);
+SubmitQuote.propTypes = {
+  saveQuote: PropTypes.func.isRequired
+};

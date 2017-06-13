@@ -35,3 +35,6 @@ footer {
 	cursor: pointer;
 	font-size: 18px;
 }
+.btn.btn-lg {
+	margin-right: 10px;
+}

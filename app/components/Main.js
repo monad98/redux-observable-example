@@ -1,12 +1,13 @@
 import React from "react";
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { Route } from 'react-router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import QuoteList from '../components/QuoteList';
-import SubmitQuote from '../components/SubmitQuote';
+import QuoteListContainer from '../containers/QuoteList';
+import SubmitQuoteContainer from '../containers/SubmitQuote';
 import {fetchQuotes} from '../actions/quotes';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 class Main extends React.Component{
 
@@ -20,17 +21,24 @@ class Main extends React.Component{
       <div>
         <Navbar />
         <div className="container main">
-          <Route path="/submit" component={SubmitQuote} />
-          <Route path="/quotes" component={QuoteList} />
+          <br/>
+          <div className="text-center">
+            <Link className="btn btn-lg btn-primary" to='/submit'>SUBMIT</Link>
+            <Link className="btn btn-lg btn-primary" to='/quotes'>QUOTES</Link>
+          </div>
+          <br/>
+
+          <Route path="/submit" component={SubmitQuoteContainer} />
+          <Route path="/quotes" component={QuoteListContainer} />
         </div>
         <Footer />
       </div>
     );
   }
 }
-// Main.propTypes = {
-//
-// };
+Main.propTypes = {
+  fetchQuotes: PropTypes.func.isRequired
+};
 
 export default connect(
   null,
