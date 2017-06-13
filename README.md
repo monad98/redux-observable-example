@@ -3,11 +3,6 @@ React + [redux-observable](https://redux-observable.js.org/) example app.
 
  [Live app](https://react-quotes-app.herokuapp.com)
 
-
-
-<img alt="react-quotes-1" src="/public/image/react-quotes-1.png" title="react-quotes-1"/>
-<img alt="react-quotes-2" src="/public/image/react-quotes-2.png" title="react-quotes-2"/>
-
 ## Quick Start
 ```bash
 #clone the repo
@@ -28,6 +23,12 @@ npm run dev
 ## Packages used
 - React
 - redux
-- redux-observable
-- react-router 4
+- [redux-observable](https://redux-observable.js.org/)
+- [react-router 4.x](https://github.com/ReactTraining/react-router)
 - react-router-redux
+
+
+##Screenshots
+
+<img alt="react-quotes-1" src="/public/image/react-quotes-1.png" title="react-quotes-1"/>
+<img alt="react-quotes-2" src="/public/image/react-quotes-2.png" title="react-quotes-2"/>
