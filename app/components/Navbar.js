@@ -20,10 +20,11 @@ const Navbar = ({count}) => (
 );
 
 Navbar.propTypes = {
-  count: PropTypes.number.isRequired
+  count: PropTypes.number.isRequired,
+  location: PropTypes.any
 };
 
 //
 export default connect(
-  ({ quotes }) => ({ count: quotes.ids.length })
+  ({ quotes, routing }) => ({ count: quotes.ids.length, location: routing.location }) //location for NavLink activeClass update
 )(Navbar);

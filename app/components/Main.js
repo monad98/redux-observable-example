@@ -7,7 +7,7 @@ import QuoteListContainer from '../containers/QuoteList';
 import SubmitQuoteContainer from '../containers/SubmitQuote';
 import {fetchQuotes} from '../actions/quotes';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 class Main extends React.Component{
 
@@ -23,8 +23,8 @@ class Main extends React.Component{
         <div className="container main">
           <br/>
           <div className="text-center">
-            <Link className="btn btn-lg btn-primary" to='/submit'>SUBMIT</Link>
-            <Link className="btn btn-lg btn-primary" to='/quotes'>QUOTES</Link>
+            <NavLink className="btn btn-lg btn-default" to='/submit' activeClassName='btn-primary'>SUBMIT</NavLink>
+            <NavLink className="btn btn-lg btn-default" to='/quotes' activeClassName='btn-primary'>QUOTES</NavLink>
           </div>
           <br/>
 
@@ -37,10 +37,11 @@ class Main extends React.Component{
   }
 }
 Main.propTypes = {
-  fetchQuotes: PropTypes.func.isRequired
+  fetchQuotes: PropTypes.func.isRequired,
+  location: PropTypes.any
 };
 
 export default connect(
-  null,
+  ({routing}) => ({location: routing.location}), // NavLink update
   {fetchQuotes}
 )(Main);
