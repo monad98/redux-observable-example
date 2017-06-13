@@ -28,7 +28,7 @@ npm run dev
 - react-router-redux
 
 
-##Screenshots
+## Screenshots
 
 <img alt="react-quotes-1" src="/public/image/react-quotes-1.png" title="react-quotes-1"/>
 <img alt="react-quotes-2" src="/public/image/react-quotes-2.png" title="react-quotes-2"/>
